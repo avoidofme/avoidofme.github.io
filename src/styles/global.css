@@ -78,6 +78,7 @@ b {
 
 a {
   color: var(--accent);
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
