@@ -3,7 +3,7 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Your name here. All rights reserved.
+	&copy; {today.getFullYear()} avoidofme. All rights reserved.
 	<div class="social-links">
 		<a href="https://m.webtoo.ls/@astro" target="_blank">
 			<span class="sr-only">Follow Astro on Mastodon</span>
@@ -28,7 +28,7 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
-		<a href="https://github.com/withastro/astro" target="_blank">
+    <a href="https://github.com/avoidofme/avoidofme.github.io" target="_blank">
 			<span class="sr-only">Go to Astro's GitHub repo</span>
 			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github"
 				><path
@@ -42,9 +42,9 @@ const today = new Date();
 <style>
 	footer {
 		padding: 2em 1em 6em 1em;
-    background: linear-gradient(var(--black), rgba(var(--mid), 50%)) no-repeat var(--bg);
-		color: var(--fg);
-		text-align: center;
+    background: linear-gradient(var(--bg), var(--black)) no-repeat var(--black);
+    color: var(--fg);
+    text-align: center;
 	}
 	.social-links {
 		display: flex;
@@ -57,6 +57,6 @@ const today = new Date();
 		color: var(--fg);
 	}
 	.social-links a:hover {
-		color: rgb(var(--mid));
+		color: var(--accent);
 	}
 </style>
