@@ -42,8 +42,9 @@ const recent_posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
       <h1>avoidofme</h1>
-      <details class='opts' open>
-        <summary>latest from the blog</summary>
+      <hr style="margin: 0 0 1.5em 0" />
+      <details class="opts" open>
+        <summary>Latest from the blog</summary>
         <ul>
 					{
 						recent_posts.map((post) => (
@@ -59,9 +60,36 @@ const recent_posts = (await getCollection('blog')).sort(
           }
 				</ul>
       </details>
-      <p>
-        Join my <a href="https://discord.gg/7GCehbumej">Discord Server</a>.
-      </p>
+      <details class="opts">
+        <summary>Projects</summary>
+        <ul>
+          <li>
+            <a href="https://discord.gg/7GCehbumej">
+              <p>Discord Server</p>
+            </a>
+          </li>
+        </ul>
+      </details>
+      <details class="opts">
+        <summary>Currently</summary>
+        <ul>
+          <li>
+            <a href="https://discord.gg/7GCehbumej">
+              <p>Discord Server</p>
+            </a>
+          </li>
+        </ul>
+      </details>
+      <details class="opts">
+        <summary>Links</summary>
+        <ul>
+          <li>
+            <a href="https://discord.gg/7GCehbumej">
+              <p>Discord Server</p>
+            </a>
+          </li>
+        </ul>
+      </details>
 		</main>
 		<Footer />
 	</body>
