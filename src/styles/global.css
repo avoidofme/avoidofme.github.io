@@ -168,6 +168,14 @@ hr {
   content: '[-] ';
 }
 
+.opts li {
+  list-style: none;
+}
+
+.opts a>p::before {
+  content: '-> ';
+}
+
 .sr-only {
   border: 0;
   padding: 0;
