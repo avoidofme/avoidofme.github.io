@@ -1,5 +1,6 @@
 ---
 title: 'First post'
+description: '1+1=2'
 pubDate: 'Jul 14 2026'
 ---
 
