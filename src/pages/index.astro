@@ -19,31 +19,10 @@ const recent_posts = (await getCollection('blog')).sort(
 	<head>
     <BaseHead title=`Home | ${SITE_TITLE}` description={SITE_DESCRIPTION} />
   </head>
-  <style>
-    li>a {
-      text-decoration: none;
-      display: flex;
-      gap: 1em;
-    }
-
-    time {
-      margin: 0;
-    }
-
-    .date {
-      font-size: 0.5em;
-      color: var(--fg);
-    }
-
-    .date::before {
-      content: '— ';
-    }
-  </style>
 	<body>
 		<Header />
 		<main>
       <h1>avoidofme</h1>
-      <hr style="margin: 0 0 1.5em 0" />
       <details class="opts" open>
         <summary>Latest from the blog</summary>
         <ul>
@@ -51,10 +30,7 @@ const recent_posts = (await getCollection('blog')).sort(
 						recent_posts.map((post) => (
 						  <li>
 				    		<a href={`/blog/${post.id}/`}>
-                  <p>{post.data.title}</p>
-                  <p class="date">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
+                  {post.data.title}
 								</a>
 							</li>
 						))
@@ -63,15 +39,15 @@ const recent_posts = (await getCollection('blog')).sort(
       </details>
       <details class="opts">
         <summary>Projects</summary>
-        <div style="padding: 1em">
+        <div>
           <div>
             <a href="https://github.com/avoidofme/avps" target="_blank"><h3>AvPS</h3></a>
-            <p>avps is a multi-threading tcp port scanner, built using go and it's goroutine.</p>
+            <p>AvPS (Average Port Scanner) is a multi-threading TCP port scanner, built with go and its goroutine.</p>
           </div>
           <h2 style="margin-top: 2em">Personal Projects</h2>
           <div>
             <a href="https://github.com/avoidofme/igtd" target="_blank"><h3>igtd</h3></a>
-            <p>Image goes to dracula. I make this command line tool because i recently use dracula theme. Because there are many cool images already why not just change the color into dracula? for now since i need it to work, i use python with pillow for image manipulation.</p>
+            <p>Image goes to dracula. I make this command line tool because i recently use dracula theme. Because there are many cool images already why not just change the color into dracula? From Python and PIL, rewriten to Go and imaging and gift.</p>
           </div>
           <div>
             <a href="https://github.com/avoidofme/von-da-bot" target="_blank"><h3>Von</h3></a>

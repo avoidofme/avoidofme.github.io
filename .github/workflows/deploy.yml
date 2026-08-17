@@ -16,6 +16,12 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v7
+      - name: get commit info
+        env:
+          PUBLIC_COMMIT_LINK: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
+        run: |
+          SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
+          export PUBLIC_COMMIT_HASH=$SHORT_SHA
       - name: build and upload the site
         uses: withastro/action@v6
 
