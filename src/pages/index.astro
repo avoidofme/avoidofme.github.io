@@ -22,7 +22,7 @@ const recent_posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-      <b>avoidofme</b>
+      <b class="avoidofme">avoidofme</b>
       <details open>
         <summary>Latest from the blog</summary>
         <ul>
@@ -31,7 +31,16 @@ const recent_posts = (await getCollection('blog')).sort(
 						  <li>
 				    		<a href={`/blog/${post.id}/`}>
                   {post.data.title}
-								</a>
+                </a>
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {
+                		post.data.pubDate.toLocaleDateString('en-us', {
+              			  year: 'numeric',
+                			month: 'short',
+              			  day: 'numeric',
+              		  })
+              	  }
+                </time>
 							</li>
 						))
           }
@@ -44,16 +53,16 @@ const recent_posts = (await getCollection('blog')).sort(
         <summary>Projects</summary>
         <div>
           <div>
-            <a href="https://github.com/avoidofme/avps" target="_blank"><b>AvPS</b></a>
+            <a href="https://github.com/avoidofme/avps" target="_blank"><h2>AvPS</h2></a>
             <p>AvPS (Average Port Scanner) is a multi-threading TCP port scanner, built with go and its goroutine.</p>
           </div>
-          <p><b>Personal Projects ↓</b></p>
+          <h3>Personal Projects ↓</h3>
           <div>
-            <a href="https://github.com/avoidofme/igtd" target="_blank"><b>igtd</b></a>
+            <a href="https://github.com/avoidofme/igtd" target="_blank"><h2>igtd</h2></a>
             <p>Image goes to dracula. I make this command line tool because i recently use dracula theme. Because there are many cool images already why not just change the color into dracula? From Python and PIL, rewriten to Go with imaging and gift also cobra.</p>
           </div>
           <div>
-            <a href="https://github.com/avoidofme/von-da-bot" target="_blank"><b>Von</b></a>
+            <a href="https://github.com/avoidofme/von-da-bot" target="_blank"><h2>Von</h2></a>
             <p>Von is a bot specifically for my discord server. I use compose to start the bot, backend and database. Python for the bot, Go for backend and postgresql for database.</p>
           </div>
         </div>
@@ -66,7 +75,7 @@ const recent_posts = (await getCollection('blog')).sort(
       </details>
       <details>
         <summary>Links</summary>
-        <ul>
+        <ul class="social-links">
           <li>
             <a href="https://github.com/avoidofme" target="_blank">GitHub</a>
           </li>

@@ -7,10 +7,12 @@
   --fg: 248, 248, 242;
   --black: 33, 34, 44;
   --red: 255, 85, 85;
+  --orange: 255, 184, 108;
   --yellow: 241, 250, 140;
   --green: 80, 250, 123;
   --cyan: 139, 233, 253;
   --purple: 189, 147, 249;
+  --pink: 255, 121, 198;
 }
 
 * {
@@ -25,10 +27,27 @@ body {
   color: rgb(var(--fg));
 }
 
+.avoidofme {
+  color: rgb(var(--red));
+}
+
 header {
   height: 3em;
   position: sticky;
   top: 0;
+  backdrop-filter: blur(0.3em);
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.4em;
 }
 
 nav {
@@ -55,9 +74,13 @@ a:hover {
   color: rgb(var(--cyan));
 }
 
+hr {
+  margin: 0.5em 0;
+}
+
 main {
   width: 70em;
-  min-height: 60vh;
+  min-height: 40vh;
   max-width: calc(100% - 4em);
   padding: 5em 1em;
   margin: auto;
@@ -75,6 +98,7 @@ details:open summary {
 
 details>*>* {
   margin-top: 0.5em;
+  margin-left: 2em;
 }
 
 ul>* {
@@ -84,6 +108,15 @@ ul>* {
 li {
   list-style-type: '-> ';
   margin-left: 3.5em;
+}
+
+img {
+  width: 50em;
+  height: auto;
+  max-width: calc(100%);
+  display: block;
+  margin: 0.5em auto;
+  border: 0.5px solid rgb(var(--green))
 }
 
 footer {
@@ -104,8 +137,28 @@ li>time {
 
 time {
   font-size: 0.8em;
+  color: rgb(var(--orange));
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc(100%);
+}
+
+.social-links>li {
+  width: calc(25%);
+  max-width: 10em;
+  margin-left: 2em;
+  list-style: none;
 }
 
 .build {
   color: rgb(var(--mid));
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }

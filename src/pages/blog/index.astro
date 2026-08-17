@@ -28,7 +28,7 @@ const posts = (await getCollection('blog')).sort(
 								{post.data.heroImage && (
 									<Image width={720} height={360} src={post.data.heroImage} alt="" />
 								)}
-                <b>{post.data.title}</b>
+                {post.data.title}
               </a>
               <time datetime={post.data.pubDate.toISOString()}>
               	{
