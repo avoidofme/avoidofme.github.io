@@ -59,18 +59,26 @@ main {
   width: 70em;
   min-height: 60vh;
   max-width: calc(100% - 4em);
-  padding: 1em;
-  margin: 5em auto;
+  padding: 5em 1em;
+  margin: auto;
 }
 
 details summary {
   list-style-type: '[+] ';
-  margin: 1em 0;
+  margin-top: 0.5em;
   cursor: pointer;
 }
 
 details:open summary {
   list-style-type: '[-] ';
+}
+
+details>*>* {
+  margin-top: 0.5em;
+}
+
+ul>* {
+  margin-top: 0.5em;
 }
 
 li {
@@ -87,7 +95,7 @@ footer {
 }
 
 footer>* {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .build {

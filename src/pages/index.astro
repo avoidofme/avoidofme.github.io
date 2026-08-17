@@ -22,8 +22,8 @@ const recent_posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-      <h1>avoidofme</h1>
-      <details class="opts" open>
+      <p><b id="avoidofme">avoidofme</b></p>
+      <details open>
         <summary>Latest from the blog</summary>
         <ul>
 					{
@@ -37,29 +37,31 @@ const recent_posts = (await getCollection('blog')).sort(
           }
 				</ul>
       </details>
-      <details class="opts">
+      <details>
         <summary>Projects</summary>
         <div>
           <div>
-            <a href="https://github.com/avoidofme/avps" target="_blank"><h3>AvPS</h3></a>
+            <a href="https://github.com/avoidofme/avps" target="_blank"><b>AvPS</b></a>
             <p>AvPS (Average Port Scanner) is a multi-threading TCP port scanner, built with go and its goroutine.</p>
           </div>
-          <h2 style="margin-top: 2em">Personal Projects</h2>
+          <p><b>Personal Projects ↓</b></p>
           <div>
-            <a href="https://github.com/avoidofme/igtd" target="_blank"><h3>igtd</h3></a>
+            <a href="https://github.com/avoidofme/igtd" target="_blank"><b>igtd</b></a>
             <p>Image goes to dracula. I make this command line tool because i recently use dracula theme. Because there are many cool images already why not just change the color into dracula? From Python and PIL, rewriten to Go and imaging and gift.</p>
           </div>
           <div>
-            <a href="https://github.com/avoidofme/von-da-bot" target="_blank"><h3>Von</h3></a>
+            <a href="https://github.com/avoidofme/von-da-bot" target="_blank"><b>Von</b></a>
             <p>Von is a bot specifically for my discord server. I use compose to start the bot, backend and database. Python for the bot, Go for backend and postgresql for database.</p>
           </div>
         </div>
       </details>
-      <details class="opts">
+      <details>
         <summary>Currently</summary>
-        <p>Learning Cybersecurity, building personal projects and doing CTFs in my free time.</p>
+        <div>
+          <p>Learning Cybersecurity, building personal projects and doing CTFs in my free time.</p>
+        </div>
       </details>
-      <details class="opts">
+      <details>
         <summary>Links</summary>
         <ul>
           <li>
