@@ -16,14 +16,16 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v7
-      - name: get commit info
-        env:
-          PUBLIC_COMMIT_LINK: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
+      - name: set build env
         run: |
           SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-          export PUBLIC_COMMIT_HASH=$SHORT_SHA
+          echo "PUBLIC_COMMIT_HASH=$SHORT_SHA" >> $GITHUB_ENV
+          echo "PUBLIC_COMMIT_LINK=${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}" >> $GITHUB_ENV
       - name: build and upload the site
         uses: withastro/action@v6
+        env:
+          PUBLIC_COMMIT_HASH: ${{ env.PUBLIC_COMMIT_HASH }}
+          PUBLIC_COMMIT_LINK: ${{ env.PUBLIC_COMMIT_LINK }}
 
   deploy:
     needs: build
