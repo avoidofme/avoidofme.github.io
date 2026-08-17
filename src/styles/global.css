@@ -21,7 +21,7 @@
 
 body {
   font-family: 'Fira Code', sans-serif;
-  background: linear-gradient(rgb(var(--black)), rgb(var(--bg))) no-repeat rgb(var(--bg));
+  background: linear-gradient(rgba(var(--mid), 0.3), rgb(var(--bg))) no-repeat rgb(var(--bg));
   color: rgb(var(--fg));
 }
 
@@ -96,6 +96,14 @@ footer {
 
 footer>* {
   margin-top: 0.5em;
+}
+
+li>time {
+  margin-left: 2em;
+}
+
+time {
+  font-size: 0.8em;
 }
 
 .build {

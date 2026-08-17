@@ -22,7 +22,7 @@ const recent_posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-      <p><b id="avoidofme">avoidofme</b></p>
+      <b>avoidofme</b>
       <details open>
         <summary>Latest from the blog</summary>
         <ul>
@@ -35,6 +35,9 @@ const recent_posts = (await getCollection('blog')).sort(
 							</li>
 						))
           }
+          <li>
+            <a href="/blog">See all</a>
+          </li>
 				</ul>
       </details>
       <details>
@@ -47,7 +50,7 @@ const recent_posts = (await getCollection('blog')).sort(
           <p><b>Personal Projects ↓</b></p>
           <div>
             <a href="https://github.com/avoidofme/igtd" target="_blank"><b>igtd</b></a>
-            <p>Image goes to dracula. I make this command line tool because i recently use dracula theme. Because there are many cool images already why not just change the color into dracula? From Python and PIL, rewriten to Go and imaging and gift.</p>
+            <p>Image goes to dracula. I make this command line tool because i recently use dracula theme. Because there are many cool images already why not just change the color into dracula? From Python and PIL, rewriten to Go with imaging and gift also cobra.</p>
           </div>
           <div>
             <a href="https://github.com/avoidofme/von-da-bot" target="_blank"><b>Von</b></a>
@@ -65,49 +68,31 @@ const recent_posts = (await getCollection('blog')).sort(
         <summary>Links</summary>
         <ul>
           <li>
-            <a href="https://github.com/avoidofme" target="_blank">
-              <p>Github</p>
-            </a>
+            <a href="https://github.com/avoidofme" target="_blank">GitHub</a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/avoidofme" target="_blank">
-              <p>LinkedIn</p>
-            </a>
+            <a href="https://linkedin.com/in/avoidofme" target="_blank">LinkedIn</a>
           </li>
           <li>
-            <a href="https://learn.cylabacademy.org/users/avoidofme" target="_blank">
-              <p>CyLab</p>
-            </a>
+            <a href="https://learn.cylabacademy.org/users/avoidofme" target="_blank">CyLab</a>
           </li>
           <li>
-            <a href="https://tryhackme.com/p/avoidofme" target="_blank">
-              <p>TryHackMe</p>
-            </a>
+            <a href="https://tryhackme.com/p/avoidofme" target="_blank">TryHackMe</a>
           </li>
           <li>
-            <a href="https://wakatime.com/@avoidofme" target="_blank">
-              <p>Wakatime</p>
-            </a>
+            <a href="https://wakatime.com/@avoidofme" target="_blank">wakatime</a>
           </li>
           <li>
-            <a href="https://freecodecamp.org/avoidofme" target="_blank">
-              <p>freeCodeCamp</p>
-            </a>
+            <a href="https://freecodecamp.org/avoidofme" target="_blank">freeCodeCamp</a>
           </li>
           <li>
-            <a href="https://bugcrowd.com/h/avoidofme" target="_blank">
-              <p>bugcrowd</p>
-            </a>
+            <a href="https://bugcrowd.com/h/avoidofme" target="_blank">bugcrowd</a>
           </li>
           <li>
-            <a href="https://leetcode.com/u/avom_valtz" target="_blank">
-              <p>LeetCode</p>
-            </a>
+            <a href="https://leetcode.com/u/avom_valtz" target="_blank">LeetCode</a>
           </li>
           <li>
-            <a href="https://discord.gg/7GCehbumej" target="_blank">
-              <p>Discord Server</p>
-            </a>
+            <a href="https://discord.gg/7GCehbumej" target="_blank">Discord Server</a>
           </li>
         </ul>
       </details>
