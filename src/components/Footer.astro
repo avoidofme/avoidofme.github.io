@@ -16,7 +16,7 @@ const commitLink = import.meta.env.PUBLIC_COMMIT_LINK || '#';
 			>
     </a>
 	</div>
-  <a class="build" href={commitLink} target="_blank">
+  <a class="build" href={commitLink} target={commitLink != '#' ? '_blank' : ''}>
     {commitHash}
   </a>
 </footer>

@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
+import FallbackImage from '../../assets/avoidofme.jpg';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
 const posts = (await getCollection('blog')).sort(
@@ -18,31 +19,31 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body>
 		<Header />
-    <main>
-      <p><b>Writings</b></p>
-			<ul>
-				{
-					posts.map((post) => (
-						<li>
-							<a href={`/blog/${post.id}/`}>
-								{post.data.heroImage && (
-									<Image width={720} height={360} src={post.data.heroImage} alt="" />
-								)}
-                {post.data.title}
-              </a>
-              <time datetime={post.data.pubDate.toISOString()}>
-              	{
-              		post.data.pubDate.toLocaleDateString('en-us', {
-              			year: 'numeric',
-              			month: 'short',
-              			day: 'numeric',
-              		})
-              	}
-              </time>
-						</li>
-					))
-				}
-			</ul>
+    <main class="posts">
+      { posts.length ? (
+        <h1>Writings</h1>
+  			<ul>
+				  {
+			  		posts.map((post) => (
+		  				<li>
+	  						<a href={`/blog/${post.id}/`}>
+                  <Image width={1024} src={post.data.heroImage || FallbackImage} alt="" />
+                  {post.data.title}
+                </a>
+                <time datetime={post.data.pubDate.toISOString()}>
+                	{
+                		post.data.pubDate.toLocaleDateString('en-us', {
+                			year: 'numeric',
+                			month: 'short',
+              			  day: 'numeric',
+              		  })
+              	  }
+                </time>
+						  </li>
+					  ))
+				  }
+        </ul>) : <p>It's empty 'round here huh?</p>
+      }
 		</main>
 		<Footer />
 	</body>
