@@ -123,12 +123,13 @@ footer {
   padding: 2em 1em;
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
   align-items: center;
   justify-items: center;
 }
 
-footer>* {
-  margin-top: 0.5em;
+li img {
+  width: 15em;
 }
 
 li>time {
@@ -151,6 +152,17 @@ time {
   max-width: 10em;
   margin-left: 2em;
   list-style: none;
+}
+
+.posts>ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc(100%);
+}
+
+.posts li {
+  list-style: none;
+  margin: 1em auto;
 }
 
 .build {

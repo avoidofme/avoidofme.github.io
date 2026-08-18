@@ -14,7 +14,8 @@ const items = [
   <nav>
     { items.map(item => (
         <a class={(item.url === '' ? pathname === '/' : pathname.substring(1).startsWith(item.url)) ? 'active' : ''}
-        href=`/${item.url}`>{ item.name }</a>
+          href=`/${item.url}`
+        >{ item.name }</a>
       ))
     }
   </nav>
