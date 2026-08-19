@@ -115,8 +115,8 @@ img {
   height: auto;
   max-width: calc(100%);
   display: block;
-  margin: 0.5em auto;
-  border: 0.5px solid rgb(var(--green))
+  margin: 0.5em auto 1em;
+  box-shadow: 0 0.5em 1em rgb(var(--black));
 }
 
 footer {
@@ -141,15 +141,14 @@ time {
   color: rgb(var(--orange));
 }
 
-.social-links {
+.links {
   display: flex;
   flex-wrap: wrap;
   max-width: calc(100%);
 }
 
-.social-links>li {
+.links>li {
   width: calc(25%);
-  max-width: 10em;
   margin-left: 2em;
   list-style: none;
 }

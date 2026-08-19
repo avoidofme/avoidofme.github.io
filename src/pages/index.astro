@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
+import resume from '../assets/resume-devsecops-en.pdf';
 import { Image } from 'astro:assets';
 import FormattedDate from '../components/FormattedDate.astro';
 
@@ -12,6 +13,21 @@ const recent_posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 ).slice(0, 6);
 
+const links = [
+  { name: "Email", url: "mailto:avom.valtz@gmail.com" },
+  { name: "Discord", url: "https://discord.gg/7GCehbumej" },
+  { name: "GitHub", url: "https://github.com/avoidofme" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/avoidofme" },
+  { name: "wakatime", url: "https://wakatime.com/@avoidofme" },
+  { name: "LeetCode", url: "https://leetcode.com/u/avom_valtz" },
+  { name: "HackerRank", url: "https://hackerrank.com/profile/avoidofme" },
+  { name: "freeCodeCamp", url: "https://freecodecamp.org/avoidofme" },
+  { name: "bugcrowd", url: "https://bugcrowd.com/h/avoidofme" },
+  { name: "HackerOne", url: "https://hackerone.com/avoidofme" },
+  { name: "TryHackMe", url: "https://tryhackme.com/p/avoidofme" },
+  { name: "CyLab", url: "https://learn.cylabacademy.org/users/avoidofme" },
+  { name: "Gravatar", url: "https://gravatar.com/avoidofme" }
+]
 ---
 
 <!doctype html>
@@ -22,7 +38,8 @@ const recent_posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-      <b class="avoidofme">avoidofme</b>
+      <h1 class="avoidofme">avoidofme</h1>
+      <a href={resume} download>download resume</a>
       <details open>
         <summary>Latest from the blog</summary>
         <ul>
@@ -75,34 +92,14 @@ const recent_posts = (await getCollection('blog')).sort(
       </details>
       <details>
         <summary>Links</summary>
-        <ul class="social-links">
-          <li>
-            <a href="https://github.com/avoidofme" target="_blank">GitHub</a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/avoidofme" target="_blank">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://learn.cylabacademy.org/users/avoidofme" target="_blank">CyLab</a>
-          </li>
-          <li>
-            <a href="https://tryhackme.com/p/avoidofme" target="_blank">TryHackMe</a>
-          </li>
-          <li>
-            <a href="https://wakatime.com/@avoidofme" target="_blank">wakatime</a>
-          </li>
-          <li>
-            <a href="https://freecodecamp.org/avoidofme" target="_blank">freeCodeCamp</a>
-          </li>
-          <li>
-            <a href="https://bugcrowd.com/h/avoidofme" target="_blank">bugcrowd</a>
-          </li>
-          <li>
-            <a href="https://leetcode.com/u/avom_valtz" target="_blank">LeetCode</a>
-          </li>
-          <li>
-            <a href="https://discord.gg/7GCehbumej" target="_blank">Discord Server</a>
-          </li>
+        <ul class="links">
+          {
+            links.map(link => (
+              <li>
+                <a href={link.url} target="_blank">{link.name}</a>
+              </li>
+            ))
+          }
         </ul>
       </details>
 		</main>
