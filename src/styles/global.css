@@ -119,6 +119,22 @@ img {
   box-shadow: 0 0.5em 1em rgb(var(--black));
 }
 
+code {
+  padding: 2px 5px;
+  background-color: rgb(var(--mid));
+  border-radius: 2px;
+}
+
+pre {
+  padding: 1.5em;
+  border-radius: 8px;
+  border: 2px solid rgb(var(--mid));
+}
+
+pre>code {
+  all: unset;
+}
+
 footer {
   padding: 2em 1em;
   display: flex;
@@ -155,7 +171,7 @@ time {
 
 .posts>ul {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   max-width: calc(100%);
 }
 
