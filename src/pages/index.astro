@@ -11,7 +11,7 @@ const recent_posts = (await getCollection("blog"))
   <h1 class="text-xl font-bold text-brand-red underline underline-offset-4">
     avoidofme
   </h1>
-  <p>Hey there! Care to take a look?</p>
+  <p>Hey there! Thanks for visiting,<br />care to take a look?</p>
   <div class="space-y-2 px-5 py-2">
     {
       recent_posts.length ? (
@@ -19,11 +19,20 @@ const recent_posts = (await getCollection("blog"))
           <summary>Latest Posts</summary>
         </details>
       ) : (
-        <p>Stay tuned for future blog postings.</p>
+        <p>[*] Stay tuned for future blog postings.</p>
       )
     }
     <details>
-      <summary>Featured Projects</summary>
+      <summary>Contact</summary>
+      <p>
+        Say hi at <a
+          href="mailto:avom.valtz@gmail.com"
+          class="underline underline-offset-4">avom.valtz@gmail.com</a
+        > or chat on <a
+          href="https://discord.gg/7GCehbumej"
+          class="underline underline-offset-4">Discord server</a
+        >
+      </p>
     </details>
   </div>
 </Layout>
@@ -39,5 +48,9 @@ const recent_posts = (await getCollection("blog"))
 
   details[open] summary {
     list-style-type: "[-] ";
+  }
+
+  details > p {
+    padding-left: 2.5rem;
   }
 </style>

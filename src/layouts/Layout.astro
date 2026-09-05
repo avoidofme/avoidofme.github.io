@@ -18,10 +18,12 @@ const { title, description, image } = Astro.props;
     <head>
         <BaseHead title={title} description={description} image={image} />
     </head>
-    <body class="bg-brand-background text-brand-foreground max-w-5xl mx-auto">
+    <body
+        class="bg-brand-background text-brand-foreground max-w-5xl min-w-xl mx-auto"
+    >
         <Header />
         <main
-            class="border-y border-x-5 border-brand-foreground/50 space-y-2 m-5 px-5 py-2 rounded-xl"
+            class="border-y border-x-5 border-brand-foreground/50 min-h-[50vh] space-y-2 m-5 px-5 py-2 rounded-xl"
         >
             <slot />
         </main>
