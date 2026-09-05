@@ -8,12 +8,20 @@ const recent_posts = (await getCollection("blog"))
 ---
 
 <Layout title="Home" description="homepage">
-  <h1 class="text-xl text-brand-red underline underline-offset-4">avoidofme</h1>
-  <p>Hey there! Thanks for visiting.</p>
-  <div class="px-5 py-2">
-    <details open>
-      <summary>Latest Posts</summary>
-    </details>
+  <h1 class="text-xl font-bold text-brand-red underline underline-offset-4">
+    avoidofme
+  </h1>
+  <p>Hey there! Care to take a look?</p>
+  <div class="space-y-2 px-5 py-2">
+    {
+      recent_posts.length ? (
+        <details open>
+          <summary>Latest Posts</summary>
+        </details>
+      ) : (
+        <p>Stay tuned for future blog postings.</p>
+      )
+    }
     <details>
       <summary>Featured Projects</summary>
     </details>
