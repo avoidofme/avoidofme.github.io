@@ -14,3 +14,7 @@
   --color-brand-cyan: #8ea4a2;
   --color-brand-white: #c8c093;
 }
+
+:root {
+  font-family: 'Fira Code', monospace;
+}

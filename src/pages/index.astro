@@ -1,7 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+const recent_posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
 ---
 
 <Layout title="Home" description="homepage">
-  <h1 class="text-brand-red">Hello world</h1>
+  <h1 class="text-xl text-brand-red underline underline-offset-4">avoidofme</h1>
+  <p>Hey there! Thanks for visiting.</p>
+
+  <div class="p-5 space-y-2">
+    <details open>
+      <summary>Latest Posts</summary>
+    </details>
+    <details>
+      <summary>Featured Projects</summary>
+    </details>
+  </div>
 </Layout>
+
+<style>
+  details:hover {
+    cursor: pointer;
+  }
+
+  summary {
+    list-style-type: "[+] ";
+  }
+
+  details[open] summary {
+    list-style-type: "[-] ";
+  }
+</style>

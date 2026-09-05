@@ -11,9 +11,9 @@ const items = [
 ---
 
 <header>
-  <nav>
+  <nav class="border-y border-x-5 border-brand-foreground/50 flex gap-5 m-5 px-5 py-2 rounded-xl">
     { items.map(item => (
-        <a class={(item.url === '' ? pathname === '/' : pathname.substring(1).startsWith(item.url)) ? 'active' : ''}
+        <a class=`underline underline-offset-4 ${(item.url === '' ? pathname === '/' : pathname.substring(1).startsWith(item.url)) ? 'text-brand-red' : ''}`
           href=`/${item.url}`
         >{ item.name }</a>
       ))
