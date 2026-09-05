@@ -1,108 +1,56 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from "../layouts/Layout.astro";
 
-import resume from '../assets/resume-devsecops-en.pdf';
-import { Image } from 'astro:assets';
-import FormattedDate from '../components/FormattedDate.astro';
-
-import { getCollection } from 'astro:content';
-const recent_posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).slice(0, 6);
-
-const links = [
-  { name: "Email", url: "mailto:avom.valtz@gmail.com" },
-  { name: "Discord", url: "https://discord.gg/7GCehbumej" },
-  { name: "GitHub", url: "https://github.com/avoidofme" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/avoidofme" },
-  { name: "wakatime", url: "https://wakatime.com/@avoidofme" },
-  { name: "LeetCode", url: "https://leetcode.com/u/avom_valtz" },
-  { name: "HackerRank", url: "https://hackerrank.com/profile/avoidofme" },
-  { name: "freeCodeCamp", url: "https://freecodecamp.org/avoidofme" },
-  { name: "bugcrowd", url: "https://bugcrowd.com/h/avoidofme" },
-  { name: "HackerOne", url: "https://hackerone.com/avoidofme" },
-  { name: "TryHackMe", url: "https://tryhackme.com/p/avoidofme" },
-  { name: "CyLab", url: "https://learn.cylabacademy.org/users/avoidofme" },
-  { name: "Gravatar", url: "https://gravatar.com/avoidofme" }
-]
+import { getCollection } from "astro:content";
+const recent_posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-    <BaseHead title=`Home | ${SITE_TITLE}` description={SITE_DESCRIPTION} />
-  </head>
-	<body>
-		<Header />
-		<main>
-      <h1 class="avoidofme">avoidofme</h1>
-      <a href={resume} download>download resume</a>
-      <details open>
-        <summary>Latest from the blog</summary>
-        <ul>
-					{
-						recent_posts.map((post) => (
-						  <li>
-				    		<a href={`/blog/${post.id}/`}>
-                  {post.data.title}
-                </a>
-                <time datetime={post.data.pubDate.toISOString()}>
-                  {
-                		post.data.pubDate.toLocaleDateString('en-us', {
-              			  year: 'numeric',
-                			month: 'short',
-              			  day: 'numeric',
-              		  })
-              	  }
-                </time>
-							</li>
-						))
-          }
-          <li>
-            <a href="/blog">See all</a>
-          </li>
-				</ul>
-      </details>
-      <details>
-        <summary>Projects</summary>
-        <div>
-          <div>
-            <a href="https://github.com/avoidofme/avps" target="_blank"><h2>AvPS</h2></a>
-            <p>AvPS (Average Port Scanner) is a multi-threading TCP port scanner, built with go and its goroutine.</p>
-          </div>
-          <h3>Personal Projects ↓</h3>
-          <div>
-            <a href="https://github.com/avoidofme/igtd" target="_blank"><h2>igtd</h2></a>
-            <p>Image goes to dracula. I make this command line tool because i recently use dracula theme. Because there are many cool images already why not just change the color into dracula? From Python and PIL, rewriten to Go with imaging and gift also cobra.</p>
-          </div>
-          <div>
-            <a href="https://github.com/avoidofme/von-da-bot" target="_blank"><h2>Von</h2></a>
-            <p>Von is a bot specifically for my discord server. I use compose to start the bot, backend and database. Python for the bot, Go for backend and postgresql for database.</p>
-          </div>
-        </div>
-      </details>
-      <details>
-        <summary>Currently</summary>
-        <div>
-          <p>Learning Cybersecurity, building personal projects and doing CTFs in my free time.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Links</summary>
-        <ul class="links">
-          {
-            links.map(link => (
-              <li>
-                <a href={link.url} target="_blank">{link.name}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </details>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title="Home" description="homepage">
+  <h1 class="text-xl font-bold text-brand-red underline underline-offset-4">
+    avoidofme
+  </h1>
+  <p>Hey there! Thanks for visiting,<br />care to take a look?</p>
+  <div class="space-y-2 px-5 py-2">
+    {
+      recent_posts.length ? (
+        <details open>
+          <summary>Latest Posts</summary>
+        </details>
+      ) : (
+        <p>[*] Stay tuned for future blog postings.</p>
+      )
+    }
+    <details>
+      <summary>Contact</summary>
+      <p>
+        Say hi at <a
+          href="mailto:avom.valtz@gmail.com"
+          class="underline underline-offset-4">avom.valtz@gmail.com</a
+        > or chat on <a
+          href="https://discord.gg/7GCehbumej"
+          class="underline underline-offset-4">Discord server</a
+        >
+      </p>
+    </details>
+  </div>
+</Layout>
+
+<style>
+  details:hover {
+    cursor: pointer;
+  }
+
+  summary {
+    list-style-type: "[+] ";
+  }
+
+  details[open] summary {
+    list-style-type: "[-] ";
+  }
+
+  details > p {
+    padding-left: 2.5rem;
+  }
+</style>
