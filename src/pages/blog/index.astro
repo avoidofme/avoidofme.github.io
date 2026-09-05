@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
@@ -12,14 +13,7 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title=`Blog | ${SITE_TITLE}` description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-    <main class="posts">
+<Layout title="Blog" description="All blog posts">
       { posts.length ? (
         <h1>Writings</h1>
   			<ul>
@@ -44,7 +38,4 @@ const posts = (await getCollection('blog')).sort(
 				  }
         </ul>) : <p>It's empty 'round here huh?</p>
       }
-		</main>
-		<Footer />
-	</body>
-</html>
+</Layout>
