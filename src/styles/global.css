@@ -1,2 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --color-brand-foreground: #c5c9c5;
+  --color-brand-background: #181616;
+
+  --color-brand-black: #0d0c0c;
+  --color-brand-red: #c4746e;
+  --color-brand-green: #8a9a7b;
+  --color-brand-yellow: #c4b28a;
+  --color-brand-blue: #8ba4b0;
+  --color-brand-magenta: #a292a3;
+  --color-brand-cyan: #8ea4a2;
+  --color-brand-white: #c8c093;
+}
