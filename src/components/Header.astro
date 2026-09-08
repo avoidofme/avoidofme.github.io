@@ -10,7 +10,7 @@ const items = [
 ];
 ---
 
-<header class="border-y border-x-5 border-brand-foreground/50 m-5 px-5 py-2 rounded-xl">
+<header class="border-t border-x-5 border-brand-foreground/50 m-5 px-5 py-2 rounded-xl">
   <nav class="flex gap-5 justify-center">
     { items.map(item => (
         <a class=`underline underline-offset-4 ${(item.url === '' ? pathname === '/' : pathname.substring(1).startsWith(item.url)) ? 'text-brand-red font-bold' : ''}`
