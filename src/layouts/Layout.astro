@@ -27,11 +27,11 @@ const {
         <BaseHead title={title} description={description} image={image} />
     </head>
     <body
-        class="bg-brand-background text-brand-foreground max-w-full w-5xl mx-auto"
+        class="bg-brand-background text-brand-foreground flex flex-col max-w-full w-5xl min-h-screen mx-auto"
     >
         {withHeader ? <Header /> : ""}
         <main
-            class="border-x-5 border-brand-foreground/50 min-h-[70vh] space-y-2 m-5 p-5 rounded-xl"
+            class="border-x-5 border-brand-foreground/50 flex-1 space-y-2 m-5 p-5 rounded-xl shadow-xl shadow-brand-black/50"
         >
             <slot />
         </main>
