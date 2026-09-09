@@ -8,9 +8,17 @@ interface Props {
     title: string;
     description: string;
     image?: ImageMetadata;
+    withHeader?: boolean;
+    withFooter?: boolean;
 }
 
-const { title, description, image } = Astro.props;
+const {
+    title,
+    description,
+    image,
+    withHeader = true,
+    withFooter = true,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,14 +27,14 @@ const { title, description, image } = Astro.props;
         <BaseHead title={title} description={description} image={image} />
     </head>
     <body
-        class="bg-brand-background text-brand-foreground max-w-5xl min-w-xl mx-auto"
+        class="bg-linear-to-b from-brand-background to-brand-black text-brand-foreground flex flex-col max-w-full w-5xl min-h-screen mx-auto"
     >
-        <Header />
+        {withHeader ? <Header /> : ""}
         <main
-            class="border-y border-x-5 border-brand-foreground/50 min-h-[50vh] space-y-2 m-5 px-5 py-2 rounded-xl"
+            class="bg-brand-background border-x-5 border-brand-foreground/50 flex flex-col flex-1 space-y-2 m-5 p-5 rounded-xl"
         >
             <slot />
         </main>
-        <Footer />
+        {withFooter ? <Footer /> : ""}
     </body>
 </html>
