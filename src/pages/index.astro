@@ -7,105 +7,42 @@ const recent_posts = (await getCollection("blog"))
   .slice(0, 6);
 ---
 
-<Layout title="Home" description="homepage">
-  <h1 class="text-3xl font-bold text-brand-red underline underline-offset-4">
-    avoidofme
-  </h1>
-  <p>Hey there! Thanks for visiting,<br />care to take a look?</p>
-  <div class="space-y-2 px-5 py-2">
-    {
-      recent_posts.length ? (
-        <details open>
-          <summary>Latest Posts</summary>
-        </details>
-      ) : (
-        <p>[*] Stay tuned for future blog postings.</p>
-      )
-    }
-    <details>
-      <summary>Contact</summary>
-      <p>
-        Say hi at <a
-          href="mailto:avom.valtz@gmail.com"
-          class="underline underline-offset-4">avom.valtz@gmail.com</a
-        > or chat on <a
-          href="https://discord.gg/7GCehbumej"
-          class="underline underline-offset-4">Discord server</a
-        >
+<Layout
+  title="Home"
+  description="homepage"
+  withHeader={false}
+  withFooter={false}
+>
+  <div class="flex flex-col flex-1">
+    <div class="w-fit mx-auto my-auto text-center space-y-2">
+      <h1 class="text-5xl font-extrabold tracking-tight text-brand-red">
+        avoidofme
+      </h1>
+      <p class="bg-brand-black mx-auto p-5 py-2 rounded-lg inline-fit">
+        <i>&quot;what you give is what you get.&quot;</i>
+        <span class="block text-right text-xs">- Byron Pulsifer</span>
       </p>
-    </details>
+      <input type="checkbox" id="nav" class="peer appearance-none" />
+      <label
+        for="nav"
+        class="cursor-pointer transition-color duration-200 text-brand-black/50 peer-checked:text-brand-red/50"
+        >click me</label
+      >
+      <div
+        class="my-2 h-0 opacity-0 bg-brand-black/50 rounded-xl p-5 overflow-hidden transition-all duration-200 peer-checked:opacity-100 peer-checked:h-50"
+      >
+        <div class="leading-relaxed">
+          <p>Thank you for visiting,</p>
+          <p>I'm still working on some pages.</p>
+          <br />
+          <p>You can ignore this,</p>
+          <p>
+            and go to <a class="underline underline-offset-4" href="/about"
+              >about me</a
+            > tho.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <p>
-    Working on <a href="/portfolio" class="underline underline-offset-4"
-      >portfolio</a
-    >.
-  </p>
 </Layout>
-
-<style>
-  summary:hover {
-    cursor: pointer;
-  }
-
-  summary {
-    list-style-type: "[+] ";
-  }
-
-  details[open] summary {
-    list-style-type: "[-] ";
-  }
-
-  details > p {
-    padding-left: 2.5rem;
-  }
-</style>
