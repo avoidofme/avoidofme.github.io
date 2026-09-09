@@ -4,9 +4,7 @@ const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || "abcdefg";
 const commitLink = import.meta.env.PUBLIC_COMMIT_LINK || "#";
 ---
 
-<footer
-	class="border-b border-x-5 border-brand-foreground/50 m-5 px-5 py-2 rounded-xl text-center"
->
+<footer class="flex flex-wrap divide-x gap-4 *:pr-4 m-5">
 	<p>
 		<span style="font-family: sans">&copy; </span>
 		{today.getFullYear() + " "}
@@ -17,10 +15,16 @@ const commitLink = import.meta.env.PUBLIC_COMMIT_LINK || "#";
 		>
 	</p>
 	<a
-		class="text-brand-foreground/30 underline underline-offset-4"
+		class="underline underline-offset-4"
 		href={commitLink}
 		target={commitLink != "#" ? "_blank" : ""}
 	>
 		{commitHash}
 	</a>
+	<a class="underline underline-offset-4" href="mailto:avom.valtz@gmail.com"
+		>email</a
+	>
+	<a class="underline underline-offset-4" href="https://discord.gg/7GCehbumej"
+		>discord</a
+	>
 </footer>
