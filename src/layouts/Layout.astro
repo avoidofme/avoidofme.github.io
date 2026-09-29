@@ -19,6 +19,6 @@ import Footer from "../components/Footer.astro";
         <div class="flex-100 w-7xl max-w-full mx-auto p-4">
             <slot />
         </div>
-        <Footer />
+        {Astro.url.pathname !== "/" && <Footer />}
     </body>
 </html>
