@@ -1,11 +1,30 @@
-<nav class="flex items-center gap-5 p-5 py-2 border-y sticky top-5">
-    <p>avoidofme</p>
-    <div class="border flex-1 flex px-5 justify-center">
-        <p>title</p>
+---
+const links = [
+    { title: "Home", url: "/home" },
+    { title: "Blog", url: "/blog" },
+    { title: "About", url: "/about" },
+];
+---
+
+<nav class="flex items-center gap-4 p-2 sticky top-0 mt-4 backdrop-blur-xl">
+    <a
+        href="/"
+        class="p-2 text-xl hover:bg-9 text-9 hover:text-brand-bg transition-color duration-150 font-extrabold tracking-tighter"
+        >avom</a
+    >
+    <div class="flex-1 flex p-2 justify-center bg-0">
+        <p class="tracking-widest text-8">{Astro.url.pathname}</p>
     </div>
-    <ul class="border flex gap-5 px-5 justify-end">
-        <li>home</li>
-        <li>blog</li>
-        <li>about</li>
-    </ul>
+    <div class="flex">
+        {
+            links.map((link) => (
+                <a
+                    href={link.url}
+                    class="p-2 bg-0 tracking-tight hover:text-brand-bg hover:bg-brand-accent transition-color duration-150"
+                >
+                    {link.title}
+                </a>
+            ))
+        }
+    </div>
 </nav>

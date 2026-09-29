@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Redacted+Script:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -5,6 +7,7 @@
     --color-selection-background: #d65d0e;
     --color-brand-bg: #282828;
     --color-brand-fg: #ebdbb2;
+    --color-brand-accent: #98971a;
     --color-0: #3c3836;
     --color-1: #cc241d;
     --color-2: #98971a;
@@ -24,4 +27,8 @@
     --color-cursor: #bdae93;
     --cursor-text-color: #665c54;
     --color-url_color: #458588;
+}
+
+:root {
+    font-family: 'Source Sans 3', sans-serif;
 }
