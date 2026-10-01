@@ -1,48 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-import { getCollection } from "astro:content";
-const recent_posts = (await getCollection("blog"))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 6);
 ---
 
-<Layout
-  title="Home"
-  description="homepage"
-  withHeader={false}
-  withFooter={false}
->
-  <div class="flex flex-col flex-1">
-    <div class="w-fit mx-auto my-auto text-center space-y-2">
-      <h1 class="text-5xl font-extrabold tracking-tight text-brand-red">
-        avoidofme
-      </h1>
-      <p class="bg-brand-black mx-auto p-5 py-2 rounded-lg inline-fit">
-        <i>&quot;what you give is what you get.&quot;</i>
-        <span class="block text-right text-xs">- Byron Pulsifer</span>
-      </p>
-      <input type="checkbox" id="nav" class="peer appearance-none" />
-      <label
-        for="nav"
-        class="cursor-pointer transition-color duration-200 text-brand-black/50 peer-checked:text-brand-red/50"
-        >click me</label
-      >
-      <div
-        class="my-2 h-0 opacity-0 bg-brand-black/50 rounded-xl p-5 overflow-hidden transition-all duration-200 peer-checked:opacity-100 peer-checked:h-50"
-      >
-        <div class="leading-relaxed">
-          <p>Thank you for visiting,</p>
-          <p>I'm still working on some pages.</p>
-          <br />
-          <p>You can ignore this,</p>
-          <p>
-            and go to <a class="underline underline-offset-4" href="/about"
-              >about me</a
-            > tho.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+<Layout>
+	<div class="p-4 pt-20 mt-20">
+		<div class="border border-0 flex w-fit items-end mx-auto">
+			<button
+				class="border-r border-0 cursor-pointer text-5xl text-9 font-extrabold tracking-tighter"
+			>
+				avoidofme
+			</button>
+			<p class="border-t border-0 text-10 font-bold">+1</p>
+		</div>
+		<div class="bg-0 p-2 w-xl max-w-full flex flex-col mt-12 mx-auto">
+			<p>continue to homepage.</p>
+			<a
+				class="border border-6 hover:bg-6 hover:text-brand-bg p-2 text-xl text-center font-extrabold tracking-tighter transition-color duration-150"
+				href="/home">home</a
+			>
+		</div>
+	</div>
 </Layout>

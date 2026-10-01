@@ -1,30 +1,10 @@
----
-const today = new Date();
-const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || "abcdefg";
-const commitLink = import.meta.env.PUBLIC_COMMIT_LINK || "#";
----
-
-<footer class="flex flex-wrap divide-x gap-4 *:pr-4 m-5">
-	<p>
-		<span style="font-family: sans">&copy; </span>
-		{today.getFullYear() + " "}
-		<a
-			class="underline underline-offset-4"
-			href="https://github.com/avoidofme"
-			target="_blank">avoidofme</a
-		>
-	</p>
-	<a
-		class="underline underline-offset-4"
-		href={commitLink}
-		target={commitLink != "#" ? "_blank" : ""}
-	>
-		{commitHash}
-	</a>
-	<a class="underline underline-offset-4" href="mailto:avom.valtz@gmail.com"
-		>email</a
-	>
-	<a class="underline underline-offset-4" href="https://discord.gg/7GCehbumej"
-		>discord</a
-	>
+<footer class="text-0 border-t mt-5 flex-1 flex items-end justify-around">
+    <div class="p-5">
+        <p class="text-sm text-8 tracking-widest">
+            @2026 - <a
+                href="https://github.com/avoidofme.github.io"
+                class="underline decoration-dotted hover:text-url">avoidofme</a
+            >
+        </p>
+    </div>
 </footer>

@@ -1,0 +1,33 @@
+---
+const links = [
+    { title: "Home", url: "/home" },
+    { title: "Blog", url: "/blog" },
+    { title: "Projects", url: "/projects" },
+    { title: "Skills", url: "/skills" },
+    { title: "Gallery", url: "/gallery" },
+    { title: "About", url: "/about" },
+    { title: "Contact", url: "/contact" },
+];
+---
+
+<nav
+    class="flex items-center justify-between gap-4 px-4 sticky top-0 mt-4 backdrop-blur-xl"
+>
+    <a
+        href="/"
+        class="p-2 text-xl hover:bg-9 text-9 hover:text-brand-bg transition-color duration-150 font-extrabold tracking-tighter"
+        >avom</a
+    >
+    <div class="flex">
+        {
+            links.map((link) => (
+                <a
+                    href={link.url}
+                    class="p-2 bg-0 tracking-tight hover:text-brand-bg hover:bg-brand-accent transition-color duration-150"
+                >
+                    {link.title}
+                </a>
+            ))
+        }
+    </div>
+</nav>
