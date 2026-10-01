@@ -26,7 +26,12 @@
     --color-15: #fbf1c7;
     --color-cursor: #bdae93;
     --cursor-text-color: #665c54;
-    --color-url_color: #458588;
+    --color-url: #458588;
+}
+
+::selection {
+    color: var(--color-selection-foreground);
+    background-color: var(--color-selection-background);
 }
 
 :root {
