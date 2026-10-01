@@ -36,4 +36,5 @@
 
 :root {
     font-family: 'Source Sans 3', sans-serif;
+    text-underline-offset: 0.25rem;
 }
