@@ -1,10 +1,23 @@
-<footer class="text-0 border-t mt-5 flex-1 flex items-end justify-around">
-    <div class="p-5">
-        <p class="text-sm text-8 tracking-widest">
-            @2026 - <a
-                href="https://github.com/avoidofme.github.io"
+---
+const today = new Date();
+const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || "hash";
+const commitLink = import.meta.env.PUBLIC_COMMIT_LINK || "#";
+---
+
+<footer class="text-0 border-t mt-5 flex-1 flex items-end justify-center">
+    <div class="text-sm p-5 text-center text-8">
+        <p class="tracking-widest">
+            @{today.getFullYear()} - <a
+                href="https://github.com/avoidofme/avoidofme.github.io"
                 class="underline decoration-dotted hover:text-url">avoidofme</a
             >
         </p>
+        <a
+            class="underline text-0 decoration-dotted hover:text-url"
+            href={commitLink}
+            target={commitLink != "#" ? "_blank" : ""}
+        >
+            {commitHash}
+        </a>
     </div>
 </footer>
