@@ -12,6 +12,30 @@ import Footer from "../components/Footer.astro";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url.href} />
+        <meta property="og:title" content={Astro.props.title || "avoidofme"} />
+        <meta
+            property="og:description"
+            content={Astro.props.description || "Obviously simple site."}
+        />
+        <meta property="og:image" content={Astro.props.image || ""} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={Astro.url.href} />
+        <meta
+            property="twitter:title"
+            content={Astro.props.title || "avoidofme"}
+        />
+        <meta
+            property="twitter:description"
+            content={Astro.props.description || "Obviously simple site."}
+        />
+        <meta property="twitter:image" content={Astro.props.image || ""} />
+
         <title>avoidofme</title>
     </head>
     <body
