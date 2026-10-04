@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Redacted+Script:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
     --color-selection-foreground: #ebdbb2;
