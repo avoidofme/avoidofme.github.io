@@ -35,7 +35,7 @@ const links = [
     <div class="flex flex-col gap-1 md:hidden">
         <input
             type="checkbox"
-            class="z-100 peer absolute ml-1 w-4 h-4 opacity-0"
+            class="z-100 peer absolute ml-1 w-4 h-4 opacity-0 cursor-pointer"
         />
 
         <span
@@ -58,7 +58,7 @@ const links = [
             <div class="p-4 flex flex-col mt-12">
                 {
                     links.map((link) => (
-                        <a href={link.url} class="p-2 tracking-tight">
+                        <a href={link.url} class="p-2 tracking-tight font-bold">
                             {link.title}
                         </a>
                     ))
