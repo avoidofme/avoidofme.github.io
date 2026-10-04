@@ -27,6 +27,12 @@
     --color-cursor: #bdae93;
     --cursor-text-color: #665c54;
     --color-url: #458588;
+    --tw-prose-body: var(--color-7);
+    --tw-prose-headings: var(--color-9);
+    --tw-prose-links: var(--color-12);
+    --tw-prose-bold: var(--color-9);
+    --tw-prose-invert-headings: var(--color-0);
+    --tw-prose-invert-links: var(--color-12);
 }
 
 ::selection {
@@ -35,6 +41,7 @@
 }
 
 :root {
+
     font-family: 'Source Sans 3', sans-serif;
     text-underline-offset: 0.25rem;
 }

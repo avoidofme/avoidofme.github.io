@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Post.astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
@@ -16,18 +16,16 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-    <div class="flex flex-col items-center justify-center">
-        <div class="bg-0 p-4 mb-4 w-full text-center">
-            <p class="text-sm text-8">{post.data.pubDate.toDateString()}</p>
-            <h1 class="text-3xl font-extrabold tracking-tighter">
-                {post.data.title}
-            </h1>
-            <i>{post.data.description}</i>
-        </div>
-        <main
-            class="bg-0 p-4 py-12 tracking-wide leading-loose prose prose-invert w-6xl max-w-screen"
-        >
-            <Content />
-        </main>
+    <div class="bg-0 p-4 mb-4 w-full text-center">
+        <p class="text-sm text-8">{post.data.pubDate.toDateString()}</p>
+        <h1 class="text-3xl font-extrabold tracking-tighter">
+            {post.data.title}
+        </h1>
+        <i>{post.data.description}</i>
     </div>
+    <main
+        class="bg-0 p-4 font-['Redacted_Script'] py-12 tracking-wide leading-loose prose prose-invert w-6xl max-w-screen"
+    >
+        <Content />
+    </main>
 </Layout>
