@@ -16,7 +16,7 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-    <div class="bg-0 p-4 mb-4 w-full text-center">
+    <div class="bg-0 p-4 mb-4 text-center">
         <p class="text-sm text-8">{post.data.pubDate.toDateString()}</p>
         <h1 class="text-3xl font-extrabold tracking-tighter">
             {post.data.title}
@@ -24,7 +24,7 @@ const { Content } = await render(post);
         <i>{post.data.description}</i>
     </div>
     <main
-        class="bg-0 p-4 font-['Redacted_Script'] py-12 tracking-wide leading-loose prose prose-invert w-6xl max-w-screen"
+        class="bg-0 p-4 font-['Redacted_Script'] py-12 tracking-wide leading-loose prose prose-invert"
     >
         <Content />
     </main>
