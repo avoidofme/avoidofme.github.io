@@ -16,15 +16,17 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-    <div class="bg-0 p-4 mb-4 text-center">
-        <p class="text-sm text-8">{post.data.pubDate.toDateString()}</p>
+    <div class="bg-brand-black p-4 mb-4 text-center">
+        <b class="text-sm text-brand-gray">
+            {post.data.pubDate.toDateString()}
+        </b>
         <h1 class="text-3xl font-extrabold tracking-tighter">
             {post.data.title}
         </h1>
         <i>{post.data.description}</i>
     </div>
     <main
-        class="bg-0 p-4 font-['Redacted_Script'] py-12 tracking-wide leading-loose prose prose-invert"
+        class="bg-brand-black p-4 font-['Redacted_Script'] py-12 tracking-wide leading-loose prose prose-invert"
     >
         <Content />
     </main>

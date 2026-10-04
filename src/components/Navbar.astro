@@ -15,7 +15,7 @@ const links = [
 >
     <a
         href="/"
-        class="p-2 text-xl hover:bg-9 text-9 hover:text-brand-bg transition-color duration-150 font-extrabold tracking-tighter"
+        class="p-2 text-xl hover:bg-brand-lightred text-brand-lightred hover:text-brand-bg transition-color duration-150 font-extrabold tracking-tighter"
         >avom</a
     >
     <div class="hidden md:flex">
@@ -23,7 +23,7 @@ const links = [
             links.map((link) => (
                 <a
                     href={link.url}
-                    class="p-2 bg-0 tracking-tight hover:text-brand-bg hover:bg-brand-accent transition-color duration-150"
+                    class="p-2 bg-brand-black tracking-tight hover:text-brand-bg hover:bg-brand-accent transition-color duration-150"
                 >
                     {link.title}
                 </a>
@@ -39,15 +39,15 @@ const links = [
         />
 
         <span
-            class="z-99 w-6 h-1 bg-9
+            class="z-99 w-6 h-1 bg-brand-blue
             peer-checked:rotate-45 peer-checked:translate-y-2 transition-transform duration-150"
         ></span>
         <span
-            class="z-98 w-6 h-1 bg-3
+            class="z-98 w-6 h-1 bg-brand-yellow
             peer-checked:rotate-45 transition-transform duration-150"
         ></span>
         <span
-            class="z-99 w-6 h-1 bg-9
+            class="z-99 w-6 h-1 bg-brand-red
             peer-checked:-rotate-45 peer-checked:-translate-y-2 transition-transform duration-150"
         ></span>
 

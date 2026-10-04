@@ -4,16 +4,19 @@ const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || "hash";
 const commitLink = import.meta.env.PUBLIC_COMMIT_LINK || "#";
 ---
 
-<footer class="text-0 border-t mt-5 flex-1 flex items-end justify-center">
-    <div class="text-sm p-5 text-center text-8">
+<footer
+    class="text-brand-black border-t mt-5 flex-1 flex items-end justify-center"
+>
+    <div class="text-sm p-5 text-center text-brand-gray">
         <p class="tracking-widest">
             @{today.getFullYear()} - <a
                 href="https://github.com/avoidofme/avoidofme.github.io"
-                class="underline decoration-dotted hover:text-url">avoidofme</a
+                class="underline decoration-dotted hover:text-brand-link"
+                >avoidofme</a
             >
         </p>
         <a
-            class="underline text-0 decoration-dotted hover:text-url"
+            class="underline text-brand-black decoration-dotted hover:text-brand-link"
             href={commitLink}
             target={commitLink != "#" ? "_blank" : ""}
         >
