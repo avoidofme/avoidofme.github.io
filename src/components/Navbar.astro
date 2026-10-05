@@ -6,16 +6,17 @@ const links = [
     { title: "Skills", url: "/skills" },
     { title: "Gallery", url: "/gallery" },
     { title: "About", url: "/about" },
+    { title: "Education", url: "/education" },
     { title: "Contact", url: "/contact" },
 ];
 ---
 
 <nav
-    class="flex items-center justify-between gap-4 px-4 sticky top-0 mt-4 backdrop-blur-xl"
+    class="flex bg-brand-black/50 items-center justify-between gap-4 px-4 sticky top-0 mt-4 backdrop-blur-xs"
 >
     <a
         href="/"
-        class="p-2 text-xl hover:bg-9 text-9 hover:text-brand-bg transition-color duration-150 font-extrabold tracking-tighter"
+        class="p-2 text-xl hover:bg-brand-lightred text-brand-lightred hover:text-brand-bg transition-color duration-150 font-extrabold tracking-tighter"
         >avom</a
     >
     <div class="hidden md:flex">
@@ -23,7 +24,7 @@ const links = [
             links.map((link) => (
                 <a
                     href={link.url}
-                    class="p-2 bg-0 tracking-tight hover:text-brand-bg hover:bg-brand-accent transition-color duration-150"
+                    class="p-2 tracking-tight hover:text-brand-bg hover:bg-brand-accent transition-color duration-150"
                 >
                     {link.title}
                 </a>
@@ -35,19 +36,19 @@ const links = [
     <div class="flex flex-col gap-1 md:hidden">
         <input
             type="checkbox"
-            class="z-100 peer absolute ml-1 w-4 h-4 opacity-0"
+            class="z-100 peer absolute ml-1 w-4 h-4 opacity-0 cursor-pointer"
         />
 
         <span
-            class="z-99 w-6 h-1 bg-9
+            class="z-99 w-6 h-1 bg-brand-blue
             peer-checked:rotate-45 peer-checked:translate-y-2 transition-transform duration-150"
         ></span>
         <span
-            class="z-98 w-6 h-1 bg-3
+            class="z-98 w-6 h-1 bg-brand-yellow
             peer-checked:rotate-45 transition-transform duration-150"
         ></span>
         <span
-            class="z-99 w-6 h-1 bg-9
+            class="z-99 w-6 h-1 bg-brand-red
             peer-checked:-rotate-45 peer-checked:-translate-y-2 transition-transform duration-150"
         ></span>
 
@@ -58,7 +59,7 @@ const links = [
             <div class="p-4 flex flex-col mt-12">
                 {
                     links.map((link) => (
-                        <a href={link.url} class="p-2 tracking-tight">
+                        <a href={link.url} class="p-2 tracking-tight font-bold">
                             {link.title}
                         </a>
                     ))

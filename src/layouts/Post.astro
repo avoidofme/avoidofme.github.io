@@ -1,0 +1,20 @@
+---
+import Layout from "./Layout.astro";
+---
+
+<Layout>
+    <article
+        class="mx-auto w-7xl max-w-full prose-code:before:content-none prose-code:after:content-none prose-code:bg-brand-gray prose-code:text-brand-bg prose-pre:prose-code:bg-transparent
+        prose
+        prose-invert
+        prose-code:rounded prose-code:p-2
+        prose-headings:text-brand-accent
+        prose-p:text-brand-fg
+        prose-a:text-brand-link
+        items-center
+        text-brand-fg
+        justify-center overflow-x-hidden flex flex-col"
+    >
+        <slot />
+    </article>
+</Layout>
