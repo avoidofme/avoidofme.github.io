@@ -4,6 +4,18 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
     <div class="bg-brand-black p-4">
-        <h1 class="text-xl font-bold tracking-tight">Projects</h1>
+        <h1 class="text-3xl font-bold tracking-tight">Projects</h1>
+        <div class="flex gap-4">
+            <div>
+                <p><a href="#p1">Project1</a></p>
+                <p><a href="#p2">Project2</a></p>
+                <p><a href="#p3">Project3</a></p>
+            </div>
+            <div class="flex-1 space-y-4">
+                <h1 id="p1" class="h-screen border">Project1</h1>
+                <h1 id="p2" class="h-screen border">Project2</h1>
+                <h1 id="p3" class="h-screen border">Project3</h1>
+            </div>
+        </div>
     </div>
 </Layout>
