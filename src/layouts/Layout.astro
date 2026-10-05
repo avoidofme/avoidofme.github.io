@@ -21,7 +21,10 @@ import Footer from "../components/Footer.astro";
             property="og:description"
             content={Astro.props.description || "Obviously simple site."}
         />
-        <meta property="og:image" content={Astro.props.image || ""} />
+        <meta
+            property="og:image"
+            content={Astro.props.image || "/public/test-img.jpg"}
+        />
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
@@ -34,7 +37,10 @@ import Footer from "../components/Footer.astro";
             property="twitter:description"
             content={Astro.props.description || "Obviously simple site."}
         />
-        <meta property="twitter:image" content={Astro.props.image || ""} />
+        <meta
+            property="twitter:image"
+            content={Astro.props.image || "/public/test-img.jpg"}
+        />
 
         <title>avoidofme</title>
     </head>

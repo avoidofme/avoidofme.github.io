@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import FallbackImage from "../assets/fallback-image.jpg";
+import tanya from "../assets/test-gif.gif";
 ---
 
 <Layout>
@@ -15,6 +18,35 @@ import Layout from "../layouts/Layout.astro";
             ></span>
         </div>
         <div class="flex-1">
+            <h1>Certificates</h1>
+            <h1>Who is this?</h1>
+            <h1>Random images</h1>
+            <div class="w-xl">
+                <Image src={FallbackImage} alt="test image" />
+            </div>
+            <div class="flex flex-wrap">
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+                <img src={tanya.src} alt="tanya" />
+            </div>
+            <video
+                class="w-3xl mx-auto"
+                autoplay
+                controls
+                muted
+                loop
+                playsinline
+            >
+                <source src="/videos/test-vid.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
             <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Obcaecati quidem ut sequi dolorem, eligendi reprehenderit esse
