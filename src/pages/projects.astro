@@ -3,19 +3,18 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <div class="bg-brand-black p-4">
+    <div class="bg-brand-black p-4 text-center space-y-4">
         <h1 class="text-3xl font-bold tracking-tight">Projects</h1>
-        <div class="flex gap-4">
-            <div>
-                <p><a href="#p1">Project1</a></p>
-                <p><a href="#p2">Project2</a></p>
-                <p><a href="#p3">Project3</a></p>
-            </div>
-            <div class="flex-1 space-y-4">
-                <h1 id="p1" class="h-screen border">Project1</h1>
-                <h1 id="p2" class="h-screen border">Project2</h1>
-                <h1 id="p3" class="h-screen border">Project3</h1>
-            </div>
+        <div class="flex gap-4 w-fit mx-auto">
+            <h1 class="min-h-10 p-4 border">nojume</h1>
+            <h1 class="min-h-10 p-4 border">avtorid</h1>
+            <h1 class="min-h-10 p-4 border">avoidofme</h1>
+            <h1 class="min-h-10 p-4 border">avtor</h1>
+        </div>
+        <div class="grid grid-cols-2 gap-4 border-t border-brand-gray pt-4">
+            <div class="h-40 border p-4">avoidofme.github.io</div>
+            <div class="h-40 border p-4">coranum</div>
+            <div class="h-40 border p-4 col-span-2">atarashii a</div>
         </div>
     </div>
 </Layout>
