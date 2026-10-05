@@ -37,7 +37,13 @@
     background-color: var(--color-selection-bg);
 }
 
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 :root {
+    scrollbar-width: none;
     font-family: 'Source Sans 3', sans-serif;
     text-underline-offset: 0.2rem;
 }
