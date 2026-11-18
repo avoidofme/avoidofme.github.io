@@ -8,5 +8,4 @@
         alt="under construction"
         class="m-2"
     />
-    <a href="/nowhere" class="text-brand-bg/40">nowhere</a>
 </div>
