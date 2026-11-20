@@ -1,5 +1,7 @@
 <script lang="ts">
     let { showJumpToTop = false } = $props();
+
+    import scrollToHash from "#lib/scrolltohash.ts";
 </script>
 
 <footer
@@ -8,6 +10,7 @@
     © 2026 avoidofme — All rights reserved.
     {#if showJumpToTop}
         <a
+            onclick={(e) => scrollToHash(e, "#top")}
             href="#top"
             class="text-xs underline underline-offset-4 decoration-dotted"
             >jump to top</a

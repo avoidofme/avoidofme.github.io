@@ -15,13 +15,14 @@
 	import { page } from "$app/state";
 	import { scale } from "svelte/transition";
 	import { cubicOut } from "svelte/easing";
+	import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 	let { children }: LayoutProps = $props();
 
 	let lenis: Lenis;
 
 	$effect(() => {
-		gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 		lenis = new Lenis({
 			duration: 1.2,
