@@ -12,6 +12,9 @@
 
 	import Navbar from "#lib/components/Navbar.svelte";
 	import Footer from "#lib/components/Footer.svelte";
+	import { page } from "$app/state";
+	import { scale } from "svelte/transition";
+	import { cubicOut } from "svelte/easing";
 
 	let { children }: LayoutProps = $props();
 
@@ -59,11 +62,19 @@
 <div class="text-brand-primary bg-brand-bg">
 	<div class="max-w-screen w-5xl min-h-svh mx-auto space-y-4 flex flex-col">
 		<Navbar />
-		<main
-			class="max-w-screen w-245 mx-auto flex-1 flex flex-col p-4 bg-brand-base rounded-sm shadow-black shadow-lg"
-		>
-			{@render children()}
-		</main>
+		{#key page.url.pathname}
+			<main
+				class="max-w-screen w-245 mx-auto flex-1 flex flex-col p-4 bg-brand-base rounded-sm shadow-black shadow-lg"
+				in:scale={{
+					opacity: 0,
+					duration: 500,
+					start: 1.2,
+					easing: cubicOut,
+				}}
+			>
+				{@render children()}
+			</main>
+		{/key}
 		<Footer />
 	</div>
 </div>
