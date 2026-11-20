@@ -12,13 +12,17 @@
 
 	import Navbar from "#lib/components/Navbar.svelte";
 	import Footer from "#lib/components/Footer.svelte";
+	import { page } from "$app/state";
+	import { scale } from "svelte/transition";
+	import { cubicOut } from "svelte/easing";
+	import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 	let { children }: LayoutProps = $props();
 
 	let lenis: Lenis;
 
 	$effect(() => {
-		gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 		lenis = new Lenis({
 			duration: 1.2,
@@ -50,20 +54,32 @@
 		lenis?.resize();
 		ScrollTrigger.refresh();
 	});
+
+	let clientHeight = $state(0);
+	let showJumpToTop = $derived(clientHeight > 1200);
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="text-brand-primary bg-brand-bg">
+<div bind:clientHeight class="text-brand-primary bg-brand-bg">
 	<div class="max-w-screen w-5xl min-h-svh mx-auto space-y-4 flex flex-col">
 		<Navbar />
-		<main
-			class="max-w-screen w-245 mx-auto flex-1 flex flex-col p-4 bg-brand-base rounded-sm shadow-black shadow-lg"
-		>
-			{@render children()}
-		</main>
-		<Footer />
+		{#key page.url.pathname}
+			<main
+				id="top"
+				class="max-w-screen w-245 mx-auto flex-1 flex flex-col p-4 bg-brand-base lg:rounded-sm lg:shadow-black lg:shadow-lg"
+				in:scale={{
+					opacity: 0,
+					duration: 400,
+					start: 0.92,
+					easing: cubicOut,
+				}}
+			>
+				{@render children()}
+			</main>
+			<Footer {showJumpToTop} />
+		{/key}
 	</div>
 </div>

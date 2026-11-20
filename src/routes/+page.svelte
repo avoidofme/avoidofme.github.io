@@ -1,8 +1,6 @@
 <script lang="ts">
     import gsap from "gsap";
 
-    import yui from "#lib/assets/yui.png";
-
     let identities = ["Deni Susanto", "@avoidofme", "@avom.valtz"];
     let index = $state(0);
     let identity: HTMLElement | undefined = $state();
@@ -44,13 +42,6 @@
                 stagger: 0.15,
                 ease: "power3.out",
             });
-
-            gsap.from(".yui", {
-                y: 1028,
-                duration: 1.5,
-                stagger: 0.15,
-                ease: "power4.out",
-            });
         });
 
         return () => {
@@ -59,7 +50,7 @@
     });
 </script>
 
-<div class="pt-12 flex-1 flex flex-col justify-between">
+<div class="md:pt-12 flex-1 flex flex-col justify-between">
     <div class="space-y-4">
         <div>
             <h2 class="hero-animate text-4xl font-bold tracking-tight">
@@ -100,8 +91,5 @@
             src="https://thecorporation.neocities.org/icon/banners/bdfs_ad.gif"
             alt="bdfs"
         />
-    </div>
-    <div class="fixed -translate-x-4 bottom-8 w-fit ml-auto">
-        <img src={yui} alt="yui" class="yui w-64" />
     </div>
 </div>
