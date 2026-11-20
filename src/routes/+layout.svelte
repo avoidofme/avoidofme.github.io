@@ -14,7 +14,7 @@
 	import Footer from "#lib/components/Footer.svelte";
 	import { page } from "$app/state";
 	import { scale } from "svelte/transition";
-	import { backInOut, cubicOut } from "svelte/easing";
+	import { cubicOut } from "svelte/easing";
 
 	let { children }: LayoutProps = $props();
 
@@ -53,17 +53,21 @@
 		lenis?.resize();
 		ScrollTrigger.refresh();
 	});
+
+	let clientHeight = $state(0);
+	let showJumpToTop = $derived(clientHeight > 1200);
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="text-brand-primary bg-brand-bg">
+<div bind:clientHeight class="text-brand-primary bg-brand-bg">
 	<div class="max-w-screen w-5xl min-h-svh mx-auto space-y-4 flex flex-col">
 		<Navbar />
 		{#key page.url.pathname}
 			<main
+				id="top"
 				class="max-w-screen w-245 mx-auto flex-1 flex flex-col p-4 bg-brand-base lg:rounded-sm lg:shadow-black lg:shadow-lg"
 				in:scale={{
 					opacity: 0,
@@ -74,7 +78,7 @@
 			>
 				{@render children()}
 			</main>
+			<Footer {showJumpToTop} />
 		{/key}
-		<Footer />
 	</div>
 </div>
