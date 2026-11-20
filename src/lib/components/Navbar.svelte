@@ -7,9 +7,9 @@
 <svelte:window bind:scrollY />
 
 <nav
-    class="z-99 sticky h-12 top-0 px-4 py-2 backdrop-blur-sm rounded-b-md transition-all duration-200 {isScrolled
-        ? 'translate-y-4 rounded-md bg-brand-base/40'
-        : 'bg-brand-base shadow-black shadow-md'}"
+    class="z-99 sticky h-12 top-0 px-4 py-2 backdrop-blur-sm lg:rounded-b-md transition-opacity md:transition-all duration-200 {isScrolled
+        ? 'md:translate-y-4 lg:rounded-md bg-brand-base/80 md:bg-brand-base/40'
+        : 'bg-brand-base lg:shadow-black lg:shadow-md'}"
 >
     <div class="flex h-full items-center justify-between">
         <a href="/" class="font-bold">avoidofme</a>

@@ -14,7 +14,7 @@
 	import Footer from "#lib/components/Footer.svelte";
 	import { page } from "$app/state";
 	import { scale } from "svelte/transition";
-	import { cubicOut } from "svelte/easing";
+	import { backInOut, cubicOut } from "svelte/easing";
 
 	let { children }: LayoutProps = $props();
 
@@ -64,11 +64,11 @@
 		<Navbar />
 		{#key page.url.pathname}
 			<main
-				class="max-w-screen w-245 mx-auto flex-1 flex flex-col p-4 bg-brand-base rounded-sm shadow-black shadow-lg"
+				class="max-w-screen w-245 mx-auto flex-1 flex flex-col p-4 bg-brand-base lg:rounded-sm lg:shadow-black lg:shadow-lg"
 				in:scale={{
 					opacity: 0,
-					duration: 500,
-					start: 1.2,
+					duration: 400,
+					start: 0.92,
 					easing: cubicOut,
 				}}
 			>

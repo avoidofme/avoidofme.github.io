@@ -50,7 +50,7 @@
     });
 </script>
 
-<div class="pt-12 flex-1 flex flex-col justify-between">
+<div class="md:pt-12 flex-1 flex flex-col justify-between">
     <div class="space-y-4">
         <div>
             <h2 class="hero-animate text-4xl font-bold tracking-tight">
