@@ -1,4 +1,4 @@
-<div class="bg-brand-base">
+<div>
     <p>
         this site is under construction tho lol gtg take a nap ig lmk imo fyi
         lwk so eepy.

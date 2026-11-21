@@ -3,6 +3,8 @@
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
 	import Lenis from "lenis";
 
+	import bg from "#lib/assets/repeated-background.png";
+
 	import "./layout.css";
 	import favicon from "#lib/assets/favicon.svg";
 
@@ -16,6 +18,7 @@
 	import { scale } from "svelte/transition";
 	import { cubicOut } from "svelte/easing";
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+	import { tick } from "svelte";
 
 	let { children }: LayoutProps = $props();
 
@@ -51,6 +54,9 @@
 	afterNavigate(async () => {
 		lenis?.scrollTo(0, { immediate: true });
 		lenis?.start();
+
+		await tick();
+
 		lenis?.resize();
 		ScrollTrigger.refresh();
 	});
@@ -63,13 +69,19 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div bind:clientHeight class="text-brand-primary bg-brand-bg">
-	<div class="max-w-screen w-5xl min-h-svh mx-auto space-y-4 flex flex-col">
+<div
+	bind:clientHeight
+	style="background-image: url({bg});"
+	class="bg-center text-brand-primary bg-brand-bg"
+>
+	<div
+		class="max-w-screen w-5xl min-h-svh mx-auto space-y-4 flex flex-col items-center"
+	>
 		<Navbar />
 		{#key page.url.pathname}
 			<main
 				id="top"
-				class="max-w-screen w-245 mx-auto flex-1 flex flex-col p-4 bg-brand-base lg:rounded-sm lg:shadow-black lg:shadow-lg"
+				class="max-w-full w-245 flex-1 flex flex-col p-4 bg-brand-bg lg:rounded-sm lg:shadow-black lg:shadow-lg"
 				in:scale={{
 					opacity: 0,
 					duration: 400,
