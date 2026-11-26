@@ -1,4 +1,4 @@
-<div class="bg-brand-base">
+<!--div>
     <p>
         this site is under construction tho lol gtg take a nap ig lmk imo fyi
         lwk so eepy.
@@ -9,4 +9,8 @@
         class="m-2"
     />
     <div class="h-screen"></div>
-</div>
+</div-->
+
+<main class="flex-1 mx-1 p-4 bg-brand-bg rounded-md">
+  <p>hello</p>
+</main>

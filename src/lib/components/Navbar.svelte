@@ -1,20 +1,11 @@
 <script lang="ts">
-    let scrollY = $state(0);
-
-    let isScrolled = $derived(scrollY > 50);
+  let { enable = true } = $props();
 </script>
 
-<svelte:window bind:scrollY />
-
 <nav
-    class="z-99 sticky h-12 top-0 px-4 py-2 backdrop-blur-sm lg:rounded-b-md transition-opacity md:transition-all duration-200 {isScrolled
-        ? 'md:translate-y-4 lg:rounded-md bg-brand-base/80 md:bg-brand-base/40'
-        : 'bg-brand-base lg:shadow-black lg:shadow-md'}"
+  class={`h-12 sticky flex px-4 items-center justify-between font-bold ${enable ? "" : "hidden"}`}
 >
-    <div class="flex h-full items-center justify-between">
-        <a href="/" class="font-bold">avoidofme</a>
-        <div class="space-x-4">
-            <a href="/blog" class="hover:text-brand-secondary">blog</a>
-        </div>
-    </div>
+  <a href="/" class="flex-1 text-brand-primary">avoidofme</a>
+  <span class="flex-1 text-center font-normal">hello world</span>
+  <a href="/blog" class="flex-1 text-end">blog</a>
 </nav>
