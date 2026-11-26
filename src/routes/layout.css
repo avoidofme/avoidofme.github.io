@@ -37,75 +37,45 @@
   --kanagawa--white-light: #dcd7ba;
 
   --brand-bg: var(--kanagawa-bg);
+  --brand-fg: var(--kanagawa-fg);
   --brand-base: var(--kanagawa-black);
-  --brand-border: #2e2e33;
+  --brand-border: var(--kanagawa-sel-bg);
   --brand-primary: var(--kanagawa-blue);
   --brand-secondary: var(--kanagawa-yellow);
+  --brand-inactive: var(--color-kanagawa-inactive_tab_fg);
 
-  --background: var(--kanagawa-bg);
+  --background: var(--kanagawa-black);
   --foreground: var(--kanagawa-fg);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.3);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.3);
-  --primary: var(--brand-primary);
-  --primary-foreground: oklch(0.986 0.002 67.8);
-  --secondary: oklch(0.96 0.002 17.2);
-  --secondary-foreground: oklch(0.214 0.009 43.1);
-  --muted: oklch(0.96 0.002 17.2);
-  --muted-foreground: oklch(0.547 0.021 43.1);
-  --accent: oklch(0.96 0.002 17.2);
-  --accent-foreground: oklch(0.214 0.009 43.1);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0.005 34.3);
-  --input: oklch(0.922 0.005 34.3);
-  --ring: oklch(0.714 0.014 41.2);
-  --chart-1: oklch(0.868 0.007 39.5);
-  --chart-2: oklch(0.547 0.021 43.1);
-  --chart-3: oklch(0.438 0.017 39.3);
-  --chart-4: oklch(0.367 0.016 35.7);
-  --chart-5: oklch(0.268 0.011 36.5);
+  --card: var(--kanagawa-black);
+  --card-foreground: var(--kanagawa-black-light);
+  --popover: var(--kanagawa-black);
+  --popover-foreground: var(--kanagawa-black-light);
+  --primary: var(--kanagawa-bg);
+  --primary-foreground: var(--kanagawa-fg);
+  --secondary: var(--kanagawa-sel-bg);
+  --secondary-foreground: var(--kanagawa-sel-fg);
+  --muted: var(--kanagawa-inactive_tab_bg);
+  --muted-foreground: var(--kanagawa-inactive_tab_fg);
+  --accent: var(--kanagawa-sel-fg);
+  --accent-foreground: var(--kanagawa-yellow);
+  --destructive: var(--kanagawa-red);
+  --border: var(--kanagawa-black-light);
+  --input: var(--kanagawa-green);
+  --ring: var(--kanagawa-black-light);
+  --chart-1: var(--kanagawa-blue-light);
+  --chart-2: var(--kanagawa-blue);
+  --chart-3: var(--kanagawa-sel-bg);
+  --chart-4: var(--kanagawa-bg);
+  --chart-5: var(--kanagawa-black);
   --radius: 0.625rem;
-  --sidebar: oklch(0.986 0.002 67.8);
-  --sidebar-foreground: oklch(0.147 0.004 49.3);
-  --sidebar-primary: oklch(0.214 0.009 43.1);
-  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-accent: oklch(0.96 0.002 17.2);
-  --sidebar-accent-foreground: oklch(0.214 0.009 43.1);
-  --sidebar-border: oklch(0.922 0.005 34.3);
-  --sidebar-ring: oklch(0.714 0.014 41.2);
-}
-
-.dark {
-  --card: oklch(0.214 0.009 43.1);
-  --card-foreground: oklch(0.986 0.002 67.8);
-  --popover: oklch(0.214 0.009 43.1);
-  --popover-foreground: oklch(0.986 0.002 67.8);
-  --primary: oklch(0.922 0.005 34.3);
-  --primary-foreground: oklch(0.214 0.009 43.1);
-  --secondary: oklch(0.268 0.011 36.5);
-  --secondary-foreground: oklch(0.986 0.002 67.8);
-  --muted: oklch(0.268 0.011 36.5);
-  --muted-foreground: oklch(0.714 0.014 41.2);
-  --accent: oklch(0.268 0.011 36.5);
-  --accent-foreground: oklch(0.986 0.002 67.8);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.547 0.021 43.1);
-  --chart-1: oklch(0.868 0.007 39.5);
-  --chart-2: oklch(0.547 0.021 43.1);
-  --chart-3: oklch(0.438 0.017 39.3);
-  --chart-4: oklch(0.367 0.016 35.7);
-  --chart-5: oklch(0.268 0.011 36.5);
-  --sidebar: oklch(0.214 0.009 43.1);
-  --sidebar-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-accent: oklch(0.268 0.011 36.5);
-  --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.547 0.021 43.1);
+  --sidebar: var(--kanagawa-bg);
+  --sidebar-foreground: var(--kanagawa-fg);
+  --sidebar-primary: var(--kanagawa-sel-bg);
+  --sidebar-primary-foreground: var(--kanagawa-sel-fg);
+  --sidebar-accent: var(--kanagawa-sel-fg);
+  --sidebar-accent-foreground: var(--kanagawa-yellow);
+  --sidebar-border: var(--kanagawa-sel-bg);
+  --sidebar-ring: var(--kanagawa-black-light);
 }
 
 @theme inline {
@@ -139,10 +109,12 @@
   --color-kanagawa--white-light: var(--kanagawa--white-light);
 
   --color-brand-bg: var(--brand-bg);
+  --color-brand-fg: var(--brand-fg);
   --color-brand-base: var(--brand-base);
   --color-brand-border: var(--brand-border);
   --color-brand-secondary: var(--brand-secondary);
   --color-brand-primary: var(--brand-primary);
+  --color-brand-inactive: var(--brand-inactive);
 
   --font-sans: "Noto Sans Variable", sans-serif;
   --font-heading: "Playfair Display Variable", serif;
