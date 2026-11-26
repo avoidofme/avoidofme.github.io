@@ -7,4 +7,8 @@
     <p class="z-10 text-brand-bg">broken by choice.</p>
 </div-->
 
-<div class="p-4">this is blog</div>
+<div class="p-4">
+  <p>this is blog</p>
+  <p>let's sat this one of the post</p>
+  <a href="/blog/aaa" class="link">aaa</a>
+</div>
