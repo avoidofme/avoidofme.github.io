@@ -3,6 +3,9 @@
   import House from "@lucide/svelte/icons/house";
   import UserRound from "@lucide/svelte/icons/user-round";
 
+  import { fade } from "svelte/transition";
+  import { cubicOut } from "svelte/easing";
+
   let identities = ["Deni Susanto", "@avoidofme", "@avom.valtz"];
   let index = $state(0);
   let identity: HTMLElement | undefined = $state();
@@ -61,7 +64,9 @@
             </span>
           {/key}
         </h1>
-        <p class="hero-animate text-kanagawa-black-light">welcome welcome.</p>
+        <p class="hero-animate border-l-4 pl-4 mt-2 font-serif">
+          <i>"to care is to let go."</i> — my last braincell
+        </p>
       </div>
       <div class="flex gap-4">
         <a
@@ -70,7 +75,7 @@
           ><span>home</span> <House /></a
         >
         <a
-          href="/home"
+          href="/about"
           class="hero-animate w-32 flex items-end gap-2 justify-center mt-4 p-2 border border-brand-secondary text-brand-secondary text-lg font-bold"
           ><span>about</span> <UserRound /></a
         >

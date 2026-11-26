@@ -1,3 +1,8 @@
+<script>
+  import { cubicOut } from "svelte/easing";
+  import { fade } from "svelte/transition";
+</script>
+
 <!--div>
     <p>
         this site is under construction tho lol gtg take a nap ig lmk imo fyi
@@ -11,6 +16,12 @@
     <div class="h-screen"></div>
 </div-->
 
-<main class="flex-1 mx-1 p-4 bg-brand-bg rounded-md">
+<main
+  in:fade={{
+    duration: 600,
+    easing: cubicOut,
+  }}
+  class="flex-1 mx-1 p-4 bg-brand-bg rounded-md"
+>
   <p>hello</p>
 </main>

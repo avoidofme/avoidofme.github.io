@@ -3,8 +3,6 @@
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import Lenis from "lenis";
 
-  import bg from "#lib/assets/repeated-background.png";
-
   import "./layout.css";
   import favicon from "#lib/assets/favicon.svg";
 
@@ -15,7 +13,7 @@
   import Navbar from "#lib/components/Navbar.svelte";
   import Footer from "#lib/components/Footer.svelte";
   import { page } from "$app/state";
-  import { scale } from "svelte/transition";
+  import { scale, fade } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
   import { ScrollToPlugin } from "gsap/ScrollToPlugin";
   import { tick } from "svelte";
@@ -80,7 +78,7 @@
         class="max-w-full w-275 flex-1 flex flex-col p-4"
         in:scale={{
           opacity: 0,
-          duration: 400,
+          duration: 600,
           start: 0.92,
           easing: cubicOut,
         }}
@@ -94,6 +92,10 @@
 
 <div
   bind:clientHeight
+  in:fade={{
+    duration: 600,
+    easing: cubicOut,
+  }}
   class="max-w-screen w-365 min-h-svh mx-auto flex flex-col select-none"
 >
   <Navbar enable={!(page.url.pathname === "/")} />

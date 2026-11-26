@@ -1,3 +1,8 @@
+<script>
+  import { cubicOut } from "svelte/easing";
+  import { fade } from "svelte/transition";
+</script>
+
 <!--div class="flex-1 flex items-center justify-center">
     <img
         src="https://thecorporation.neocities.org/icon/construct.gif"
@@ -7,7 +12,13 @@
     <p class="z-10 text-brand-bg">broken by choice.</p>
 </div-->
 
-<div class="p-4">
+<div
+  in:fade={{
+    duration: 600,
+    easing: cubicOut,
+  }}
+  class="bg-brand-bg h-full p-4"
+>
   <p>this is blog</p>
   <p>let's sat this one of the post</p>
   <a href="/blog/aaa" class="link">aaa</a>
