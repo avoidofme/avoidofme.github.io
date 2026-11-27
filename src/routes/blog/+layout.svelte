@@ -11,10 +11,10 @@
     duration: 600,
     easing: cubicOut,
   }}
-  class="flex-1 w-full grid grid-cols-4 gap-4"
+  class="flex-1 w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
 >
-  <main class="col-span-3">
+  <main class="md:col-span-2 lg:col-span-3 mx-1 md:ml-1">
     {@render children()}
   </main>
-  <aside class="bg-brand-bg p-4 col-span-1">sidebar</aside>
+  <aside class="bg-brand-bg p-4 -order-1 md:order-1 col-span-1">sidebar</aside>
 </div>

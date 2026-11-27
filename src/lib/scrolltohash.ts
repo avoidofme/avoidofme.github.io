@@ -1,8 +1,7 @@
 import gsap from "gsap";
 
-export default function scrollToHash(event, targetId) {
+export default function scrollToHash(event: MouseEvent , targetId: string) {
     event.preventDefault();
-    console.log("otiwi");
 
     gsap.to(window, {
         duration: 1,
@@ -12,6 +11,4 @@ export default function scrollToHash(event, targetId) {
         },
         ease: "power2.inOut",
     });
-
-    //history.pushState(null, "", targetId);
 }

@@ -1,7 +1,7 @@
 <script lang="ts">
   import gsap from "gsap";
 
-  function navbarIn(node: gsap.TweenTarget, { duration = 1.0 } = {}) {
+  function navbarIn(node: gsap.TweenTarget, { duration = 0.4 } = {}) {
     const ctx = gsap.context(() => {
       gsap.from(node, {
         y: -64,
@@ -22,7 +22,7 @@
 {#if enable}
   <nav
     in:navbarIn
-    class="h-12 sticky flex px-4 items-center justify-between font-bold"
+    class="h-12 flex px-4 items-center justify-between font-bold"
   >
     <a href="/" class="flex-1 text-brand-primary">avoidofme</a>
     <span class="flex-1 text-center font-normal">hello world</span>

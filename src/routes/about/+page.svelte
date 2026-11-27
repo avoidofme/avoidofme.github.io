@@ -10,7 +10,7 @@
     easing: cubicOut,
   }}
   style="background-image: url({bg});"
-  class="flex-1 flex items-center justify-center rounded-md mx-1 bg-center bg-cover bg-no-repeat"
+  class="flex-1 flex items-center justify-center rounded-md mx-1 lg:mx-0 bg-center bg-cover bg-no-repeat"
 >
   <div class="max-w-screen w-xl p-4 text-center">
     <p>I am still thinking about it.</p>

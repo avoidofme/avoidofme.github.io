@@ -11,7 +11,7 @@
     duration: 600,
     easing: cubicOut,
   }}
-  class="bg-brand-bg h-full p-4"
+  class="bg-brand-bg h-full p-4 rounded-md"
 >
   <p>blog post be like</p>
   <p>{params.slug}</p>
