@@ -9,6 +9,7 @@
   import type { LayoutProps } from "./$types";
 
   import { afterNavigate, beforeNavigate } from "$app/navigation";
+  import { Draggable } from "gsap/Draggable";
 
   import Navbar from "#lib/components/Navbar.svelte";
   import Footer from "#lib/components/Footer.svelte";
@@ -22,9 +23,9 @@
 
   let lenis: Lenis;
 
-  $effect(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
+  $effect(() => {
     lenis = new Lenis({
       duration: 1.2,
       autoRaf: false,
