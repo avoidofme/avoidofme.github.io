@@ -79,6 +79,19 @@
 
 <svelte:head>
   <link rel="icon" href={favicon} />
+  <title>personal site — avoidofme</title>
+  <meta name="description" content="indescribable." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={page.url.href} />
+  <meta property="og:title" content="avoidofme" />
+  <meta property="og:description" content="indescribable." />
+  <!--meta property="og:image" content="https://example.com" /-->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="avoidofme" />
+  <meta name="twitter:description" content="indescribable." />
+  <!--meta name="twitter:image" content="https://example.com" /-->
 </svelte:head>
 
 <div
