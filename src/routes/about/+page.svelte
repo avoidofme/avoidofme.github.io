@@ -9,17 +9,10 @@
     duration: 600,
     easing: cubicOut,
   }}
-  style="background-image: url({bg})"
-  class="bg-center bg-cover bg-no-repeat flex-1 p-4"
+  style="background-image: url({bg});"
+  class="flex-1 flex items-center justify-center rounded-md mx-1 lg:mx-0 bg-center bg-cover bg-no-repeat"
 >
-  <div class="flex justify-between">
-    <img
-      src="https://thecorporation.neocities.org/icon/construct.gif"
-      alt="under construction"
-    />
-    <div class="p-4 bg-brand-secondary/20 rounded-lg h-fit">
-      <h3 class="text-xl font-bold tracking-tight">About me</h3>
-      <p>I am still working on this site.</p>
-    </div>
+  <div class="max-w-screen w-xl p-4 text-center">
+    <p>I am still thinking about it.</p>
   </div>
 </div>

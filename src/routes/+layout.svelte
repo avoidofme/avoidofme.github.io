@@ -13,7 +13,7 @@
   import Navbar from "#lib/components/Navbar.svelte";
   import Footer from "#lib/components/Footer.svelte";
   import { page } from "$app/state";
-  import { scale, fade } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
   import { ScrollToPlugin } from "gsap/ScrollToPlugin";
   import { tick } from "svelte";
@@ -39,7 +39,21 @@
     gsap.ticker.add(updateLenis);
     gsap.ticker.lagSmoothing(0);
 
+    const ctx = gsap.context(() => {
+      gsap.to(".scroll-progress", {
+        scaleX: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: document.documentElement,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
+    });
+
     return () => {
+      ctx.revert();
       gsap.ticker.remove(updateLenis);
       lenis.destroy();
     };
@@ -65,30 +79,20 @@
 
 <svelte:head>
   <link rel="icon" href={favicon} />
-</svelte:head>
+  <title>personal site — avoidofme</title>
+  <meta name="description" content="indescribable." />
 
-<!--div bind:clientHeight>
-  <div
-    class="max-w-screen w-6xl min-h-svh mx-auto space-y-4 flex flex-col items-center"
-  >
-    <Navbar />
-    {#key page.url.pathname}
-      <main
-        id="top"
-        class="max-w-full w-275 flex-1 flex flex-col p-4"
-        in:scale={{
-          opacity: 0,
-          duration: 600,
-          start: 0.92,
-          easing: cubicOut,
-        }}
-      >
-        {@render children()}
-      </main>
-      <Footer {showJumpToTop} />
-    {/key}
-  </div>
-</div-->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={page.url.href} />
+  <meta property="og:title" content="avoidofme" />
+  <meta property="og:description" content="indescribable." />
+  <!--meta property="og:image" content="https://example.com" /-->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="avoidofme" />
+  <meta name="twitter:description" content="indescribable." />
+  <!--meta name="twitter:image" content="https://example.com" /-->
+</svelte:head>
 
 <div
   bind:clientHeight
@@ -98,6 +102,9 @@
   }}
   class="max-w-screen w-365 min-h-svh mx-auto flex flex-col select-none"
 >
+  <div
+    class="z-999 scroll-progress fixed top-0 left-0 bg-brand-border scale-x-0 w-full h-1 origin-top-left"
+  ></div>
   <Navbar enable={!(page.url.pathname === "/")} />
   {@render children()}
   <Footer {showJumpToTop} />
