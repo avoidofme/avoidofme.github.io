@@ -2,6 +2,7 @@
   import gsap from "gsap";
   import House from "@lucide/svelte/icons/house";
   import UserRound from "@lucide/svelte/icons/user-round";
+  import { Draggable } from "gsap/Draggable";
 
   let identities = ["Deni Susanto", "@avoidofme", "@avom.valtz"];
   let index = $state(0);
@@ -28,6 +29,17 @@
 
   $effect(() => {
     const ctx = gsap.context(() => {
+      Draggable.create("#pfp", {
+        onRelease: () => {
+          gsap.to("#pfp", {
+            x: 0,
+            y: 0,
+            duration: 1,
+            ease: "elastic.out",
+          });
+        },
+      });
+
       gsap.from(".hero-animate", {
         y: 64,
         opacity: 0,
@@ -77,9 +89,10 @@
       </div>
     </div>
     <img
+      id="pfp"
       src="https://avatars.githubusercontent.com/u/285938264"
       alt="pfp"
-      class="hero-animate w-64 mb-12 mx-auto md:m-0 border-4 -order-1 md:order-1 block"
+      class="hero-animate w-64 mb-12 mx-auto md:m-0 border rounded-full -order-1 md:order-1 block"
     />
   </div>
 </div>

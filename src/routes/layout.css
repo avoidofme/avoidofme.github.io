@@ -44,7 +44,7 @@
   --brand-secondary: var(--kanagawa-yellow);
   --brand-inactive: var(--color-kanagawa-inactive_tab_fg);
 
-  --background: var(--kanagawa-black);
+  --background: var(--kanagawa-bg);
   --foreground: var(--kanagawa-fg);
   --card: var(--kanagawa-black);
   --card-foreground: var(--kanagawa-black-light);
