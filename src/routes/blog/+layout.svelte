@@ -11,10 +11,12 @@
     duration: 600,
     easing: cubicOut,
   }}
-  class="flex-1 w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  class="flex-1 w-full flex flex-col md:flex-row gap-4"
 >
-  <main class="md:col-span-2 lg:col-span-3 mx-1 md:ml-1">
+  <main class="md:flex-2 lg:flex-3">
     {@render children()}
   </main>
-  <aside class="bg-brand-bg p-4 -order-1 md:order-1 col-span-1">sidebar</aside>
+  <aside class="-order-1 md:order-1 md:flex-1">
+    <p class="bg-brand-base px-4 py-2 text-center">Top singko blog post</p>
+  </aside>
 </div>

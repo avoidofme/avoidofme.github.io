@@ -30,7 +30,7 @@
     duration: 600,
     easing: cubicOut,
   }}
-  class="flex-1 flex-col-reverse mx-1 lg:mx-0 bg-brand-bg rounded-md"
+  class="flex-1 flex-col-reverse mx-1 lg:mx-0 rounded-md"
 >
   <div id="hero" class="h-[calc(100svh-3rem)] bg-red-500 rounded-t-md">
     <h1 class="text-7xl font-bold tracking-tight">
